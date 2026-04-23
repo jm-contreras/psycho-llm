@@ -1,0 +1,47 @@
+# Environment / secrets
+.env
+
+# Raw data — hosted on OSF, not in repo
+data/
+!data/README.md
+
+# Analysis output (generated, not source)
+analysis/output/
+
+# Scratch / internal working docs
+analysis/scratch.ipynb
+paper/lit_notes/
+paper/appendix_fragments/
+project_instructions_v2.md
+
+# LaTeX build artifacts
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.fdb_latexmk
+paper/*.fls
+paper/*.log
+paper/*.out
+paper/*.synctex.gz
+paper/main.pdf
+texput.log
+
+# Stray files
+<sqlite3.Connection*>
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+
+# macOS
+.DS_Store
+
+# IDE / tooling
+.vscode/
+.idea/
+.claude/

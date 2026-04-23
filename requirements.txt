@@ -1,0 +1,20 @@
+# Core analysis
+tabulate>=0.9
+pandas==2.2.3
+numpy==2.0.1
+scipy==1.13.0
+statsmodels==0.14.5
+factor_analyzer==0.5.1
+semopy==2.3.11
+
+# Plotting
+matplotlib==3.10.1
+seaborn==0.13.2
+
+# Pipeline + infra
+python-dotenv==1.0.1
+litellm==1.82.4
+openai==2.29.0
+boto3==1.38.12
+flask>=3.0
+requests>=2.32
