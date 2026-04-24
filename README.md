@@ -13,8 +13,8 @@ Raw response data, LLM-judge ratings, and anonymized Prolific human ratings are 
 Download the archive and extract into `data/` before running any analysis:
 
 ```bash
+curl -L https://osf.io/download/cv56f/ -o data.tar.gz
 mkdir -p data
-curl -L <OSF_DOWNLOAD_URL> -o data.tar.gz
 tar -xzf data.tar.gz -C data/ --strip-components=1
 ```
 
