@@ -1,6 +1,6 @@
 # psycho-llm
 
-Code and materials for **A Bottom-Up Psychometric Instrument for Large Language Models**, by JM Contreras.
+Code and materials for **An LLM-Native Psychometric Instrument Does Not Predict LLM Behavior: Evidence Across 25 Modelss**, by Juan Manuel Contreras.
 
 This repository accompanies the arXiv preprint (link forthcoming). It contains the item pool, data-collection pipeline, and analysis code used to construct and validate a 5-factor LLM-native psychometric instrument (Responsiveness, Deference, Boldness, Guardedness, Verbosity) on 25 models across 9 API providers.
 
@@ -60,7 +60,7 @@ See [`CLAUDE.md`](CLAUDE.md) for deeper architectural notes.
 
 ```bibtex
 @article{contreras2026psycholm,
-  title  = {A Bottom-Up Psychometric Instrument for Large Language Models},
+  title  = {An LLM-Native Psychometric Instrument Does Not Predict LLM Behavior: Evidence Across 25 Models},
   author = {Contreras, JM},
   year   = {2026},
   note   = {arXiv preprint (forthcoming)}
