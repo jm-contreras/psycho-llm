@@ -50,8 +50,8 @@ analysis/        EFA, CFA, reliability, validity, appendix-table generators
 scripts/         Reproducibility entry points
 model_registry.json          Model routing metadata for 25 configurations
 behavioral_prompts_v2.md     20 behavioral prompts used in Phase 3
-llm_native_item_pool_v0.2.md Full item pool (300 items)
-osf_preregistration_v3.md    Archival preregistration
+items/llm_native_item_pool_v0.2.md  Full item pool (300 items)
+osf_preregistration_v3.md           Archival preregistration
 ```
 
 See [`CLAUDE.md`](CLAUDE.md) for deeper architectural notes.

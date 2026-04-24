@@ -22,9 +22,6 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).parent.parent
 ITEM_POOL_PATH = REPO_ROOT / "items" / "llm_native_item_pool_v0.2.md"
 
-# Fallback: also accept the file in repo root (before it is moved)
-_FALLBACK_PATH = REPO_ROOT / "llm_native_item_pool_v0.2.md"
-
 # Regex patterns
 _DIRECT_ROW = re.compile(
     r"^\|\s*([A-Z]+-D\d+)\s*\|\s*(.*?)\s*\|\s*([+\-−])\s*\|"
@@ -54,13 +51,10 @@ def load_items(path: Path | None = None) -> list[dict]:
     Parse the item pool markdown and return all items sorted by item_id.
     """
     if path is None:
-        path = ITEM_POOL_PATH if ITEM_POOL_PATH.exists() else _FALLBACK_PATH
+        path = ITEM_POOL_PATH
 
     if not path.exists():
-        raise FileNotFoundError(
-            f"Item pool not found at {ITEM_POOL_PATH} or {_FALLBACK_PATH}. "
-            "Place llm_native_item_pool_v0.2.md in items/ or the repo root."
-        )
+        raise FileNotFoundError(f"Item pool not found at {ITEM_POOL_PATH}.")
 
     text = path.read_text(encoding="utf-8")
     lines = text.splitlines()
