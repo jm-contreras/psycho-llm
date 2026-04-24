@@ -1,6 +1,6 @@
 # psycho-llm
 
-Code and materials for **An LLM-Native Psychometric Instrument Does Not Predict LLM Behavior: Evidence Across 25 Modelss**, by Juan Manuel Contreras.
+Code and materials for **An LLM-Native Psychometric Instrument Does Not Predict LLM Behavior: Evidence Across 25 Models**, by Juan Manuel Contreras.
 
 This repository accompanies the arXiv preprint (link forthcoming). It contains the item pool, data-collection pipeline, and analysis code used to construct and validate a 5-factor LLM-native psychometric instrument (Responsiveness, Deference, Boldness, Guardedness, Verbosity) on 25 models across 9 API providers.
 
@@ -8,12 +8,12 @@ This repository accompanies the arXiv preprint (link forthcoming). It contains t
 
 Raw response data, LLM-judge ratings, and anonymized Prolific human ratings are hosted on OSF:
 
-> **OSF DOI:** _to be filled at release_ (`psycho-llm-data-v1.tar.gz`)
+> **OSF DOI:** [10.17605/OSF.IO/5XJS7](https://doi.org/10.17605/OSF.IO/5XJS7) (`psycho-llm-data-v1.tar.gz`)
 
 Download the archive and extract into `data/` before running any analysis:
 
 ```bash
-curl -L https://osf.io/download/cv56f/ -o data.tar.gz
+curl -L https://osf.io/5xjs7/download -o data.tar.gz
 mkdir -p data
 tar -xzf data.tar.gz -C data/ --strip-components=1
 ```
