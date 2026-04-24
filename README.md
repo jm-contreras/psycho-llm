@@ -4,6 +4,8 @@ Code and materials for **An LLM-Native Psychometric Instrument Does Not Predict 
 
 This repository accompanies the arXiv preprint (link forthcoming). It contains the item pool, data-collection pipeline, and analysis code used to construct and validate a 5-factor LLM-native psychometric instrument (Responsiveness, Deference, Boldness, Guardedness, Verbosity) on 25 models across 9 API providers.
 
+The manuscript will be linked here upon arXiv assignment.
+
 ## Data
 
 Raw response data, LLM-judge ratings, and anonymized Prolific human ratings are hosted on OSF:
@@ -43,7 +45,6 @@ Expected runtime: ~20–45 minutes on a modern laptop.
 ## Layout
 
 ```
-paper/           LaTeX source of the manuscript (main.tex, references.bib)
 items/           AI-native item pool (machine-readable)
 pipeline/        Data collection pipeline (litellm-based; not needed for analyses)
 analysis/        EFA, CFA, reliability, validity, appendix-table generators
