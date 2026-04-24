@@ -5,7 +5,7 @@ This directory is intentionally empty in the public repo. Raw data lives on OSF.
 Download the data archive from OSF ([doi:10.17605/OSF.IO/5XJS7](https://doi.org/10.17605/OSF.IO/5XJS7)) and extract it here:
 
 ```bash
-curl -L https://osf.io/5xjs7/download -o data.tar.gz
+curl -L https://osf.io/cv56f/download -o data.tar.gz
 tar -xzf data.tar.gz -C data/ --strip-components=1
 ```
 
