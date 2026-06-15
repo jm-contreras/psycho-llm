@@ -1,0 +1,6 @@
+factor,n_models,mean,sd,min,max
+Responsiveness,25,2.818,0.235,2.428,3.215
+Deference,25,2.525,0.116,2.306,2.687
+Guardedness,25,2.747,0.181,2.431,3.19
+Boldness,25,3.319,0.343,2.417,3.837
+Verbosity,25,3.481,0.394,2.082,4.139

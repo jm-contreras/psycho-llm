@@ -1,0 +1,26 @@
+model_id,display_name,Responsiveness,Deference,Guardedness,Boldness,Verbosity
+bedrock/us.anthropic.claude-haiku-4-5-20251001-v1:0,Claude Haiku 4.5,3.144,2.677,3.19,3.403,3.356
+bedrock/us.anthropic.claude-opus-4-6-v1,Claude Opus 4.6,3.17,2.619,2.783,3.0,3.684
+bedrock/us.anthropic.claude-sonnet-4-6,Claude Sonnet 4.6,3.148,2.645,2.731,2.823,3.282
+openai/cohere-command-a,Command A,2.77,2.587,2.771,3.49,3.751
+deepseek/deepseek-reasoner,DeepSeek R1,2.798,2.615,2.431,3.157,3.507
+openai/deepseek-v3.2,DeepSeek V3.2,2.648,2.544,2.533,3.753,3.6
+gemini/gemini-3.1-flash-lite-preview,Gemini 3.1 Flash,2.868,2.404,2.65,3.53,3.475
+gemini/gemini-3.1-pro-preview,Gemini 3.1 Pro,3.003,2.406,2.654,2.417,3.488
+bedrock/google.gemma-3-27b-it,Gemma 3 27B,2.46,2.324,3.0,3.3,4.139
+bedrock/converse/zai.glm-5,GLM-5,3.062,2.55,2.644,2.89,2.884
+openai/gpt-5.4,GPT-5.4,3.008,2.356,2.573,3.26,3.782
+openai/gpt-5.4-mini-2026-03-17,GPT-5.4 Mini,2.557,2.306,2.627,3.763,3.556
+openai/gpt-5.4-nano,GPT-5.4 Nano,2.714,2.477,2.994,3.427,2.082
+openai/gpt-oss-120b,GPT-OSS 120B,2.936,2.649,2.763,3.417,3.519
+xai/grok-4.20-beta-0309-non-reasoning,Grok 4.20,2.71,2.587,2.781,3.567,3.26
+ai21/jamba-large-1.7,Jamba Large 1.7,2.595,2.628,2.904,3.427,3.593
+bedrock/converse/moonshotai.kimi-k2.5,Kimi K2.5,3.215,2.569,3.0,3.513,3.396
+openai/Llama-4-Maverick-17B-128E-Instruct-FP8,Llama 4 Maverick,2.594,2.655,2.931,3.497,3.763
+openai/mimo-v2-pro,MiMo V2 Pro,2.711,2.485,2.487,3.837,3.793
+bedrock/converse/minimax.minimax-m2.5,MiniMax M2.5,3.001,2.687,2.69,3.087,3.098
+openai/mistral-large-3,Mistral Large 3,2.525,2.387,2.581,3.417,3.954
+bedrock/converse/nvidia.nemotron-super-3-120b,Nemotron 3 Super,2.799,2.596,2.871,3.61,3.589
+bedrock/amazon.nova-pro-v1:0,Nova 2 Pro,2.634,2.495,2.717,3.14,3.689
+openai/phi-4,Phi 4,2.428,2.458,2.702,3.513,3.454
+dashscope/qwen3.5-plus,Qwen 3.5,2.94,2.421,2.663,2.737,3.328

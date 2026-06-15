@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this instrument, data, or code, please cite the paper below."
+title: "psycho-llm: An LLM-Native Behavioral Psychometric Instrument"
+authors:
+  - family-names: Contreras
+    given-names: Juan Manuel
+repository-code: "https://github.com/jm-contreras/psycho-llm"
+license: MIT
+preferred-citation:
+  type: article
+  title: "An LLM-Native Psychometric Instrument Does Not Predict LLM Behavior: Evidence Across 25 Models"
+  authors:
+    - family-names: Contreras
+      given-names: Juan Manuel
+  year: 2026
+  identifiers:
+    - type: other
+      value: "arXiv:2606.09843"
+      description: "arXiv preprint identifier"
+  url: "https://arxiv.org/abs/2606.09843"

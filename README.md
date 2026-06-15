@@ -2,9 +2,41 @@
 
 Code and materials for **An LLM-Native Psychometric Instrument Does Not Predict LLM Behavior: Evidence Across 25 Models**, by Juan Manuel Contreras.
 
-This repository accompanies the arXiv preprint (link forthcoming). It contains the item pool, data-collection pipeline, and analysis code used to construct and validate a 5-factor LLM-native psychometric instrument (Responsiveness, Deference, Boldness, Guardedness, Verbosity) on 25 models across 9 API providers.
+This repository accompanies the paper, available now on arXiv:
 
-The manuscript will be linked here upon arXiv assignment.
+> 📄 **Paper:** [arXiv:2606.09843](https://arxiv.org/abs/2606.09843)
+>
+> 📝 **Technical essay:** [juanma.phd/writing/llm-self-reports-dont-predict-llm-behavior](https://juanma.phd/writing/llm-self-reports-dont-predict-llm-behavior/)
+>
+> 🔬 **Plain-language summary:** [gist.science/paper/2606.09843](https://gist.science/paper/2606.09843)
+
+It contains the validated instrument, the item pool, the data-collection pipeline, and the analysis code used to construct and validate a 5-factor LLM-native psychometric instrument (Responsiveness, Deference, Boldness, Guardedness, Verbosity) on 25 models across 9 API providers.
+
+## The instrument
+
+![Self-report profiles of nine popular models across the five AI-native factors (z-scored against the 25-model reference set).](assets/model_profiles.png)
+
+The validated instrument lives in [`scale/`](scale/) and is ready to use on any model: the 100
+items, the administration prompt, a dependency-free scorer, and 25-model reference norms. See
+**[`scale/README.md`](scale/README.md)** for the column reference, full scoring procedure, and norms.
+
+| Factor | Items | α | Interpretation |
+|---|---|---|---|
+| **Responsiveness** | 29 | .972 | "Good assistant" general factor (adapts, structures, engages) |
+| **Deference** | 26 | .974 | "Stay in your lane" (complies, contains, withholds judgment) |
+| **Guardedness** | 16 | .936 | Over-refusal, safety signaling, caution |
+| **Boldness** | 10 | .930 | Originality, epistemic confidence, personal style |
+| **Verbosity** | 19 | .940 | Unsolicited disclaimers, preambles, over-communication |
+
+Use it in three steps:
+
+1. **Administer** — send each item with the prompt in [`scale/administration_prompt.md`](scale/administration_prompt.md).
+2. **Score** — collect the 1–5 answers keyed by `item_code` and run `python scale/score.py` (no dependencies; also runs a worked example).
+3. **Interpret** — higher factor scores mean more of that factor.
+
+> The companion paper finds these self-report scores do **not** reliably predict models'
+> open-ended behavior as rated by humans. Treat the scale as a validated measure of LLM
+> *self-description* and read the paper before reading scores as behavioral predictions.
 
 ## Data
 
@@ -45,7 +77,8 @@ Expected runtime: ~20–45 minutes on a modern laptop.
 ## Layout
 
 ```
-items/           AI-native item pool (machine-readable)
+scale/           The validated 100-item instrument: items, admin prompt, scorer
+items/           AI-native item pool (machine-readable; full 300-item candidate set)
 pipeline/        Data collection pipeline (litellm-based; not needed for analyses)
 analysis/        EFA, CFA, reliability, validity, appendix-table generators
 scripts/         Reproducibility entry points
@@ -59,15 +92,25 @@ See [`CLAUDE.md`](CLAUDE.md) for deeper architectural notes.
 
 ## Citation
 
+If you use the instrument, data, or code, please cite the paper (see also [`CITATION.cff`](CITATION.cff)):
+
 ```bibtex
-@article{contreras2026psycholm,
-  title  = {An LLM-Native Psychometric Instrument Does Not Predict LLM Behavior: Evidence Across 25 Models},
-  author = {Contreras, JM},
-  year   = {2026},
-  note   = {arXiv preprint (forthcoming)}
+@misc{contreras2026llmnative,
+  title         = {An LLM-Native Psychometric Instrument Does Not Predict LLM Behavior: Evidence Across 25 Models},
+  author        = {Juan Manuel Contreras},
+  year          = {2026},
+  eprint        = {2606.09843},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.HC},
+  url           = {https://arxiv.org/abs/2606.09843}
 }
 ```
 
 ## License
 
-Code is released under the MIT License. Data on OSF is released under CC-BY 4.0.
+- **Code** (pipeline, analysis, `scale/score.py`) — MIT License ([`LICENSE`](LICENSE)).
+- **The instrument** (`scale/` items, administration prompt, documentation) — CC-BY 4.0
+  ([`scale/LICENSE`](scale/LICENSE)).
+- **Data on OSF** — CC-BY 4.0.
+
+Reuse freely with attribution: please cite the paper above.

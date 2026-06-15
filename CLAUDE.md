@@ -4,39 +4,34 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**psycho-llm** is a research project constructing and validating a psychometric instrument for measuring behavioral dispositions in LLMs. The study administers 300 items (240 direct Likert + 60 scenario) + BFI-44 to 25 model configurations across 9 API providers, analyzes the factor structure via EFA/CFA, and validates against human behavioral ratings + LLM-as-judge ensemble. Target: arXiv preprint by April 24, 2026.
+**psycho-llm** is a research project constructing and validating a psychometric instrument for measuring behavioral dispositions in LLMs. The study administers 300 items (240 direct Likert + 60 scenario) + BFI-44 to 25 model configurations across 9 API providers, analyzes the factor structure via EFA/CFA, and validates against human behavioral ratings + LLM-as-judge ensemble.
 
 ### Source of Truth
 
-- **Methods and results:** [paper/main.tex](paper/main.tex) — the manuscript draft is the authoritative description of what was done and what was found. TODOs mark sections pending completion.
+- **Methods and results:** the paper ([arXiv:2606.09843](https://arxiv.org/abs/2606.09843)) is the authoritative description of what was done and what was found.
+- **Final instrument:** [`scale/`](scale/) — the validated 100-item scale, scorer, and reference norms.
 - **Phase 3 behavioral prompts:** [behavioral_prompts_v2.md](behavioral_prompts_v2.md) — 20 prompts targeting the 5-factor structure, including rating scale, HIT design, and discriminant validity notes.
-- **Experimental design (archival):** [llm_psychometrics_experimental_design_v0.6.md](llm_psychometrics_experimental_design_v0.5.md) — the pre-execution plan. Superseded by the paper for anything that differs; deviations documented in the paper §Deviations.
+- **Experimental design (archival):** [llm_psychometrics_experimental_design_v0.6.md](llm_psychometrics_experimental_design_v0.6.md) — the pre-execution plan. Superseded by the paper for anything that differs; deviations documented in the paper §Deviations.
 - **Preregistration (archival):** [osf_preregistration_v3.md](osf_preregistration_v3.md) — original preregistration. Deviations documented in the paper.
-
-### Current Status (as of 2026-03-28)
-
-- **Phase 1 complete.** All 25 models × 300 AI-native items × 30 runs + 44 BFI items × 30 runs collected (~258K rows).
-- **Phase 2 complete.** 5-factor EFA solution (Responsiveness, Deference, Boldness, Guardedness, Verbosity), 96/240 items retained. All reliability metrics exceed thresholds. Convergent/discriminant validity vs. BFI-44 computed.
-- **Phase 3 in progress.** Behavioral samples collected (2,500 = 25 models × 20 prompts × 5 runs). LLM-as-judge ratings complete. **Prolific human ratings next.**
-- **Paper draft started.** Methods and available results drafted in paper/main.tex.
 
 ### 5-Factor Structure
 
 | Factor | Name | Items | α | Interpretation |
 |---|---|---|---|---|
-| F1 | Responsiveness | 27 | .976 | "Good assistant" general factor — adapts, structures, engages |
-| F2 | Deference | 25 | .969 | "Stay in your lane" — complies, contains, withholds judgment |
-| F3 | Boldness | 15 | .953 | Originality + epistemic confidence + personal style |
-| F4 | Guardedness | 11 | .924 | Over-refusal, safety signaling, caution |
-| F5 | Verbosity | 18 | .945 | Unsolicited disclaimers, preambles, over-communication |
+| F1 | Responsiveness | 29 | .972 | "Good assistant" general factor — adapts, structures, engages |
+| F2 | Deference | 26 | .974 | "Stay in your lane" — complies, contains, withholds judgment |
+| F3 | Guardedness | 16 | .936 | Over-refusal, safety signaling, caution |
+| F4 | Boldness | 10 | .930 | Originality + epistemic confidence + personal style |
+| F5 | Verbosity | 19 | .940 | Unsolicited disclaimers, preambles, over-communication |
 
-Factor codes: `RE`, `DE`, `BO`, `GU`, `VB`.
+Factor codes: `RE`, `DE`, `GU`, `BO`, `VB`. The validated instrument is exported to [`scale/`](scale/).
 
 ## Repository Structure
 
 ```
-paper/                          # Manuscript (LaTeX)
-  main.tex                      # Methods + results draft (source of truth)
+scale/                          # Final validated instrument (items, scorer, norms)
+  scale_v1_items.csv            # 100 retained items
+  score.py                      # stdlib-only scorer (raw 1-5 -> 5 factor scores)
 items/                          # Item pool (source of truth for data collection)
   llm_native_item_pool_v0.2.md  # 300 items across 12 candidate dimensions
 pipeline/                       # Data collection pipeline
@@ -58,7 +53,7 @@ pipeline/                       # Data collection pipeline
   judge_prompt.py               # LLM-as-judge prompt construction + few-shot examples
   judge_runner.py               # Judge ensemble execution
   behavioral_runner.py          # Behavioral sample collection
-data/raw/                       # Git-ignored: responses.db (SQLite), responses.csv
+data/                           # Not in repo; hosted on OSF (see README). Holds responses.db etc.
 analysis/                       # Analysis scripts
   primary_analyses.py           # Main: EFA → item selection → CFA → reliability → profiles
   esem.py                       # ESEM confirmatory analysis + Tucker congruence
