@@ -42,12 +42,12 @@ Use it in three steps:
 
 Raw response data, LLM-judge ratings, and anonymized Prolific human ratings are hosted on OSF:
 
-> **OSF DOI:** [10.17605/OSF.IO/5XJS7](https://doi.org/10.17605/OSF.IO/5XJS7) (`psycho-llm-data-v1.tar.gz`)
+> **OSF project:** [osf.io/5xjs7/overview](https://osf.io/5xjs7/overview) — DOI [10.17605/OSF.IO/5XJS7](https://doi.org/10.17605/OSF.IO/5XJS7) (`psycho-llm-data-v1.tar.gz`, ~210 MB)
 
 Download the archive and extract into `data/` before running any analysis:
 
 ```bash
-curl -L https://osf.io/cv56f/download -o data.tar.gz
+curl -L https://osf.io/download/fwgyv/ -o data.tar.gz
 mkdir -p data
 tar -xzf data.tar.gz -C data/ --strip-components=1
 ```
