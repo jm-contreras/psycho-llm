@@ -1,6 +1,6 @@
 # psycho-llm
 
-Code and materials for **An LLM-Native Psychometric Instrument Does Not Predict LLM Behavior: Evidence Across 25 Models**, by Juan Manuel Contreras.
+Code and materials for **An LLM-Native Psychometric Instrument Reveals a Self-Report–Behavior Gap Across 25 Models**, by Juan Manuel Contreras.
 
 This repository accompanies the paper, available now on arXiv:
 
@@ -108,7 +108,7 @@ If you use the instrument, data, or code, please cite the paper (see also [`CITA
 
 ```bibtex
 @misc{contreras2026llmnative,
-  title         = {An LLM-Native Psychometric Instrument Does Not Predict LLM Behavior: Evidence Across 25 Models},
+  title         = {An LLM-Native Psychometric Instrument Reveals a Self-Report–Behavior Gap Across 25 Models},
   author        = {Juan Manuel Contreras},
   year          = {2026},
   eprint        = {2606.09843},
