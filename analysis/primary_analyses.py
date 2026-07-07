@@ -73,8 +73,8 @@ FORCED_N_FACTORS = 5
 FACTOR_LABELS = {
     "Factor1": "Responsiveness",
     "Factor2": "Deference",
-    "Factor3": "Boldness",
-    "Factor4": "Guardedness",
+    "Factor3": "Guardedness",
+    "Factor4": "Boldness",
     "Factor5": "Verbosity",
 }
 

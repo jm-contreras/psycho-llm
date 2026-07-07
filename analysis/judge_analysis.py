@@ -52,8 +52,8 @@ AGREEMENT_THRESHOLD = 0.65
 _EFA_FACTOR_TO_CODE = {
     "Factor1": "RE",
     "Factor2": "DE",
-    "Factor3": "BO",
-    "Factor4": "GU",
+    "Factor3": "GU",
+    "Factor4": "BO",
     "Factor5": "VB",
 }
 
@@ -216,6 +216,7 @@ def load_instrument_factor_scores(db_path: Path = DB_PATH) -> pd.DataFrame:
         rows.append(row)
 
     scores = pd.DataFrame(rows)
+    scores = scores[["model_id"] + [f for f in FACTOR_ORDER if f in scores.columns]]
     scores.to_csv(factor_scores_path, index=False)
     print(f"  Saved factor scores for {len(scores)} models → {factor_scores_path}")
     return scores

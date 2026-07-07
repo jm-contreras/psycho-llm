@@ -72,6 +72,18 @@ bash scripts/reproduce.sh
 
 This runs every analysis entry point in `analysis/` and prints the headline numbers for side-by-side comparison against the manuscript (Cronbach α, Tucker φ, sample sizes, convergence correlations). Outputs land in `analysis/output/`.
 
+The suite includes the robustness analyses added in the arXiv v2 revision:
+
+| Script | What it checks |
+|---|---|
+| `analysis/attenuation_analysis.py` | Criterion (human-rating) reliability and attenuation-corrected instrument × human correlations |
+| `analysis/objective_behavior.py` | Objective, text-computable behavioral measures vs. self-report and vs. rater scores |
+| `analysis/dissociation_test.py` | Formal bootstrap test of the instrument/judge/human dissociation |
+| `analysis/family_jackknife.py` | Leave-one-developer-family-out jackknife of the model-level validity correlations |
+| `analysis/confirmation_reliability.py` | Reliability recomputed on the held-out confirmation half (runs 16–30) only |
+
+All analyses read `data/raw/responses.db` and `data/prolific/prolific.db` as extracted from the OSF archive. `confirmation_reliability` additionally needs `data/scale_v1_items.csv`, which is regenerated from the raw data by `python -m analysis.make_scale_v1_csv` (reproduce.sh runs it in the right order).
+
 Expected runtime: ~20–45 minutes on a modern laptop.
 
 ## Layout
@@ -80,7 +92,7 @@ Expected runtime: ~20–45 minutes on a modern laptop.
 scale/           The validated 100-item instrument: items, admin prompt, scorer
 items/           AI-native item pool (machine-readable; full 300-item candidate set)
 pipeline/        Data collection pipeline (litellm-based; not needed for analyses)
-analysis/        EFA, CFA, reliability, validity, appendix-table generators
+analysis/        EFA, CFA, reliability, validity, robustness checks, appendix-table generators
 scripts/         Reproducibility entry points
 model_registry.json          Model routing metadata for 25 configurations
 behavioral_prompts_v2.md     20 behavioral prompts used in Phase 3

@@ -48,6 +48,14 @@ echo "==> Acquiescence audit + model-level EFA"
 python -m analysis.acquiescence_audit
 python -m analysis.model_level_efa
 
+echo "==> Robustness analyses (arXiv v2)"
+python -m analysis.attenuation_analysis
+python -m analysis.objective_behavior
+python -m analysis.dissociation_test
+python -m analysis.family_jackknife
+python -m analysis.make_scale_v1_csv   # writes data/scale_v1_items.csv, needed next
+python -m analysis.confirmation_reliability
+
 echo "==> Appendix tables"
 for s in make_appendix_tables make_hero_profile make_metadata_aggregation \
          make_method_convergence make_mtmm_factor make_ocean_profile \
